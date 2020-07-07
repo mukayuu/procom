@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>お問い合わせフォーム</title>
+<link rel="stylesheet" href="style.css">
+<script type="text/javascript" src="contact.js"></script>
+<span id="view_today"></span>
+
+<script type="text/javascript">
+// 今日の日付情報を取得し変数dTodayに格納する
+var dToday = new Date();
+
+// 取得した日付情報から年・月・日・曜日を取得する
+var year = dToday.getFullYear();
+var month = dToday.getMonth()+1;
+var day = dToday.getDate();
+var week = dToday.getDay();
+
+// 曜日データを配列に格納する
+var yobi= new Array("日","月","火","水","木","金","土");
+
+// 取得した日付情報を表示する
+
+
+</script>
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.0.min.js"></script>
+
+</head>
+<body>
+
+  <div class="Form">
+
+
+<div><h1>プロコミュ</h1></div>
+<div><h2>登録内容</h2></div>
+
+
+
+    <form name="contact" method="POST" data-netlify="true">
+  <div class="Form-Item">
+    <p class="Form-Item-Label">
+      <span class="Form-Item-Label-Required">必須</span>人数
+    </p>
+    <label><input type="radio" name="sex" value="male" required>１名</label>
+    <label><input type="radio" name="sex" value="female">２名</label>
+  </div>
+
+  <script>
+
+
+
+ $(function(){
+  $('.Form-Btn').click(function(){
+    var check_count = $('.Form-Items :checked').length;
+    if (check_count == 0 ){
+      alert('参加日時をチェックしてください。')
+      return false;
+    }
+  });
+});
+
+
+</script>
+  <div class="Form-Items" >
+
+    <p class="Form-Item-Label"><span class="Form-Item-Label-Required">必須</span>参加日時</p>
+    <p><label><input class="chk" type="checkbox" name="hobby" value="sports" ><script>//出力用
+  	 document.write(  month + "月" + day + "日 " + yobi[week] + "曜日"　+ "18:00~19:00");
+  </script></label></p>
+    <p><label><input class="chk" type="checkbox" name="hobby" value="reading"><script>//出力用
+    document.write(  month + "月" + day + "日 " + yobi[week] + "曜日"+ "19:00~20:00");
+  </script></label></p>
+    <p><label><input class="chk" type="checkbox" name="hobby" value="music"><script>//出力用
+    document.write( month + "月" + day + "日 " + yobi[week] + "曜日"+ "20:00~21:00");
+  </script></label></p>
+    <p><label><input class="chk" type="checkbox" name="hobby" value="travel"><script>//出力用
+    document.write(  month + "月" + day + "日 " + yobi[week] + "曜日"+ "21:00~22:00");
+  </script></label></p>
+  <p><label><input class="chk" type="checkbox" name="hobby" value="travel"><script>//出力用
+  document.write(  month + "月" + day + "日 " + yobi[week] + "曜日"+ "22:00~23:00");
+</script></label></p>
+<p><label><input class="chk" type="checkbox" name="hobby" value="travel"><script>//出力用
+document.write(  month + "月" + day + "日 " + yobi[week] + "曜日"+ "23:00~24:00");
+</script></label></p>
+
+<div class="opacity">
+
+
+<p>※一回の応募で候補の中から一つしかマッチングしません。</p>
+<p>※候補が多ければ多いほどマッチングの可能性が高いです。</p>
+<p>※プロコミュ参加後もう一度参加したい場合は再度受付してください</p>
+</div>
+  </div>
+
+
+  <div class="Form-Item">
+    <p class="Form-Item-Label"><span class="Form-Item-Label-Required">必須</span>料金プラン</p>
+    <label><input type="checkbox" name="hobby" value="sports" required>一律料金　￥500 / 1人</label>
+    <div class="opacity">
+    <p>※開始時刻の20分前に参加の結果が通知されますので、お待ちください。</p>
+    </div>
+  </div>
+  <input type="submit" class="Form-Btn" value="送信する" >
+
+</div>
+
+
+
+
+
+</body>
+</html>
