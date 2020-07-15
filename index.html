@@ -7,23 +7,35 @@
 <script type="text/javascript" src="contact.js"></script>
 <span id="view_today"></span>
 
-<script type="text/javascript">
-// 今日の日付情報を取得し変数dTodayに格納する
-var dToday = new Date();
 
-// 取得した日付情報から年・月・日・曜日を取得する
-var year = dToday.getFullYear();
-var month = dToday.getMonth()+1;
-var day = dToday.getDate();
-var week = dToday.getDay();
+<script>
+var Youbi = new Array( "日", "月", "火", "水", "木", "金", "土" );
+var d = new Date();
+var n= 6;//土曜日
+d.setDate( d.getDate() - d.getDay() % 7 + n);
 
-// 曜日データを配列に格納する
-var yobi= new Array("日","月","火","水","木","金","土");
-
-// 取得した日付情報を表示する
+d.setDate( d.getDate());
+var sYer = "" + d.getFullYear();
+var sMon = ( "00" + ( d.getMonth() + 1 ) ).match( /..$/ );;
+var sDat = ( "00" + d.getDate() ).match( /..$/ );
 
 
 </script>
+<script>
+var Youbi = new Array( "日", "月", "火", "水", "木", "金", "土" );
+var d = new Date();
+var n= 5;//土曜日
+d.setDate( d.getDate() - d.getDay() % 7 + n);
+
+d.setDate( d.getDate());
+var Yer = "" + d.getFullYear();
+var Mon = ( "00" + ( d.getMonth() + 1 ) ).match( /..$/ );;
+var Dat = ( "00" + d.getDate() ).match( /..$/ );
+
+
+</script>
+
+
   <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.0.min.js"></script>
 
 </head>
@@ -66,23 +78,18 @@ var yobi= new Array("日","月","火","水","木","金","土");
 
     <p class="Form-Item-Label"><span class="Form-Item-Label-Required">必須</span>参加日時</p>
     <p><label><input class="chk" type="checkbox" name="hobby" value="sports" ><script>//出力用
-  	 document.write(  month + "月" + day + "日 " + yobi[week] + "曜日"　+ "18:00~19:00");
+    document.write(sYer + "年" + sMon + "月" + sDat + "日"+ "土曜日"　+ "18:00~19:00");
+
   </script></label></p>
     <p><label><input class="chk" type="checkbox" name="hobby" value="reading"><script>//出力用
-    document.write(  month + "月" + day + "日 " + yobi[week] + "曜日"+ "19:00~20:00");
+      document.write(sYer + "年" + sMon + "月" + sDat + "日"+ "土曜日"　+ "21:00~22:00");
   </script></label></p>
     <p><label><input class="chk" type="checkbox" name="hobby" value="music"><script>//出力用
-    document.write( month + "月" + day + "日 " + yobi[week] + "曜日"+ "20:00~21:00");
+    document.write(Yer + "年" + Mon + "月" + Dat + "日"+ "金曜日"　+ "18:00~19:00");
   </script></label></p>
     <p><label><input class="chk" type="checkbox" name="hobby" value="travel"><script>//出力用
-    document.write(  month + "月" + day + "日 " + yobi[week] + "曜日"+ "21:00~22:00");
+      document.write(Yer + "年" + Mon + "月" + Dat + "日"+ "金曜日"　+ "21:00~22:00");
   </script></label></p>
-  <p><label><input class="chk" type="checkbox" name="hobby" value="travel"><script>//出力用
-  document.write(  month + "月" + day + "日 " + yobi[week] + "曜日"+ "22:00~23:00");
-</script></label></p>
-<p><label><input class="chk" type="checkbox" name="hobby" value="travel"><script>//出力用
-document.write(  month + "月" + day + "日 " + yobi[week] + "曜日"+ "23:00~24:00");
-</script></label></p>
 
 <div class="opacity">
 
@@ -92,6 +99,14 @@ document.write(  month + "月" + day + "日 " + yobi[week] + "曜日"+ "23:00~24
 <p>※プロコミュ参加後もう一度参加したい場合は再度受付してください</p>
 </div>
   </div>
+  <div class="Form-Item">
+    <p class="Form-Item-Label">
+      <span class="Form-Item-Label-Required">必須</span>性別
+    </p>
+    <label><input type="radio" name="sex" value="male" required>男性</label>
+    <label><input type="radio" name="sex" value="female">女性</label>
+  </div>
+
 
 
   <div class="Form-Item">
